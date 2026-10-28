@@ -16,8 +16,3 @@ vim.g.lazyvim_picker = "telescope"
 if vim.lsp.semantic_tokens and vim.lsp.semantic_tokens.enable then
   vim.lsp.semantic_tokens.enable(false)
 end
-vim.lsp.config("*", {
-  on_init = function(client)
-    client.server_capabilities.semanticTokensProvider = nil
-  end,
-})
