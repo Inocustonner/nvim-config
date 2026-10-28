@@ -90,3 +90,10 @@ require("lazy").setup({
     },
   },
 })
+
+-- Disable LSP semantic tokens. They re-highlight code with finer-grained groups
+-- and make it look bolder/darker the moment a server attaches. This has to run
+-- *after* lazy.setup(), because loading plugins resets the capability marker.
+if vim.lsp.semantic_tokens and vim.lsp.semantic_tokens.enable then
+  vim.lsp.semantic_tokens.enable(false)
+end
