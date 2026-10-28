@@ -1,4 +1,12 @@
-
-# local test artifacts
+# Local test artifacts
 .tmp/
 nvim.log
+
+# Track only configuration files; ignore everything else by default
+*
+!**/*.lua
+!snippets/
+!snippets/**
+!lazyvim.json
+!lazy-lock.json
+!.gitignore
