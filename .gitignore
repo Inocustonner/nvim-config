@@ -1,0 +1,4 @@
+
+# local test artifacts
+.tmp/
+nvim.log

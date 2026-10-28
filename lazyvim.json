@@ -1,0 +1,7 @@
+{
+  "version": 8,
+  "extras": [
+    "lazyvim.plugins.extras.coding.blink",
+    "lazyvim.plugins.extras.editor.telescope"
+  ]
+}
