@@ -1,6 +1,9 @@
 ---@type vim.lsp.Config
 return {
   on_init = function(client)
+    -- Keep treesitter's colors (see options.lua): no semantic tokens.
+    client.server_capabilities.semanticTokensProvider = nil
+
     if client.workspace_folders then
       local path = client.workspace_folders[1].name
       if

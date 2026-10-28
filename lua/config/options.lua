@@ -9,3 +9,15 @@ vim.opt.relativenumber = false
 
 -- Use Telescope for LazyVim's built-in finder keys (<leader>ff, <leader>fg, ...)
 vim.g.lazyvim_picker = "telescope"
+
+-- LSP semantic tokens re-highlight the buffer with finer-grained groups and make
+-- code look bolder/darker right after a server attaches. Disable them so
+-- treesitter (gruvbox-material) keeps its colors.
+if vim.lsp.semantic_tokens and vim.lsp.semantic_tokens.enable then
+  vim.lsp.semantic_tokens.enable(false)
+end
+vim.lsp.config("*", {
+  on_init = function(client)
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
+})
