@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "nvim-web-devicons": {
+      "rev": "ec309a0eaff6ea967e58c275996155ab5c16938d",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    }
+  }
+}
