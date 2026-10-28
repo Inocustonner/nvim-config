@@ -7,6 +7,8 @@ return {
       -- Disable every cmdline format so the command line behaves like vanilla
       -- Neovim: the full text stays visible, with no icon (tofu) and no conceal.
       opts.cmdline = vim.tbl_deep_extend("force", opts.cmdline or {}, {
+        -- classic bottom command line; the default is the centered "cmdline_popup"
+        view = "cmdline",
         format = {
           cmdline = false,
           search_down = false,
