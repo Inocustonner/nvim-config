@@ -1,12 +1,15 @@
-# Local test artifacts
-.tmp/
-nvim.log
-
-# Track only configuration files; ignore everything else by default
+# Track only configuration files; ignore everything else by default.
+# `!*/` keeps directories traversable so the negations below can match files
+# inside them. Without it, `*` excludes lua/ and nested .lua files never match
+# `!**/*.lua`, so new plugin specs silently go untracked.
 *
+!*/
 !**/*.lua
-!snippets/
 !snippets/**
 !lazyvim.json
 !lazy-lock.json
 !.gitignore
+
+# Local test artifacts / junk (after !*/ so they stay ignored)
+.tmp/
+nvim.log
