@@ -2,22 +2,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      -- server configs live in lsp/<name>.lua; mason = false: installed via uv, so enable directly
       servers = {
-        basedpyright = {
-          settings = {
-            basedpyright = {
-              -- ruff handles import sorting
-              disableOrganizeImports = true,
-              analysis = {
-                typeCheckingMode = "standard", -- "basic" | "standard" | "strict" | "recommended"
-                autoImportCompletions = true,
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-                diagnosticMode = "openFilesOnly",
-              },
-            },
-          },
-        },
+        basedpyright = { mason = false },
+        ruff = { mason = false },
       },
     },
   },
