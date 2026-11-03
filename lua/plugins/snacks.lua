@@ -5,6 +5,7 @@ return {
       explorer = { enabled = false }, -- no sidebar explorer; yazi is the file manager
       notifier = { enabled = true, level = vim.log.levels.ERROR }, -- only error notifications
       indent = { animate = { enabled = false } }, -- instant indent scope (no animation)
+      scroll = { enabled = false }, -- no animated scroll on zz, <C-d>, <C-u>, ...
     },
   },
 }

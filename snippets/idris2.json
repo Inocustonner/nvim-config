@@ -1,7 +1,7 @@
 {
   "RunElab": {
     "prefix": ["runelab", "runElab", "%runElab", "%runelab"],
-    "body": "%runElab ${1:derive} \"${2:TypeName}\" [${3:Show}]$0",
+    "body": "%runElab derive \"${2:TypeName}\" [${3:Show}]$0",
     "description": "%runElab directive"
   }
 }
