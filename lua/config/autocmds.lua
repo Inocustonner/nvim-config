@@ -52,11 +52,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- idris2.show_implicits()
     idris2.show_machine_names()
 
-    local chars = {}
-    for char in ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"):gmatch(".") do
-      table.insert(chars, char)
-    end
-    table.insert(chars, "_")
-    client.server_capabilities.completionProvider.triggerCharacters = chars
+    -- Do not widen completionProvider.triggerCharacters: idris2_lsp is a
+    -- single-threaded typechecker, so asking it for a completion after every
+    -- letter saturates it and the popup lags behind typing. blink.cmp already
+    -- triggers on keyword characters, so the server's own trigger set is enough.
   end,
 })
